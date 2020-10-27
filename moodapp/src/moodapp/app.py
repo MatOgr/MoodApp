@@ -30,13 +30,21 @@ class MoodApp(toga.App):
         """
         main_box = toga.Box(style=Pack(direction=COLUMN))
 
-        name_label = toga.Label('Your name seems to be ',
-                                style=Pack(padding=(0, 5)))
-        self.name_input = toga.TextInput(style=Pack(flex=1))
-
-        name_box = toga.Box(style=Pack(direction=ROW, padding=5))
-        name_box.add(name_label)
-        name_box.add(self.name_input)
+        """
+        Top bar section  
+            title : RecipeMaster
+        """
+        top_label = toga.Label('RecipeMaster', style=Pack(
+                                    padding=(0, 5),
+                                    background_color='Tomato',
+                                    color='White')
+                               )
+        top_bar = toga.Box(style=Pack(
+            direction=ROW,
+            padding=5,
+            background_color='Tomato')
+        )
+        top_bar.add(top_label)
 
         button = toga.Button(
             '*Your button to picture*',
@@ -44,7 +52,7 @@ class MoodApp(toga.App):
             style=Pack(padding=5)
         )
 
-        main_box.add(name_box)
+        main_box.add(top_bar)
         main_box.add(button)
 
         self.main_window = toga.MainWindow(title=self.formal_name)
@@ -53,7 +61,7 @@ class MoodApp(toga.App):
 
     def say_hello(self, widget):
         self.load_data()
-        print(self.site_data['ingredients'])
+        self.main_window.info_dialog('Result', str(self.site_data))
 
 
 def main():

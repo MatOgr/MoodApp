@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Briefcase-Version: 0.3.3
+Name: moodapp
+Formal-Name: MoodApp
+App-ID: com.example.moodapp
+Version: 0.0.1
+Home-page: https://example.com/moodapp
+Author: Mateusz Ogrodowczyk
+Author-email: matjonne@gmail.com
+Summary: Recruitment test application using FB api
